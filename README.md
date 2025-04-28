@@ -16,18 +16,18 @@ This repository contains Python scripts for classifying ID card images and extra
 
 3. **OCR for ID Card Text Extraction**
    - Uses PaddleOCR to extract text from Indian PAN card images, with visualization of bounding boxes.
+   - Explored KerasOCR and Tesseract but chose PaddleOCR for its superior accuracy, robustness to complex layouts, and support for multilingual text detection, making it ideal for diverse ID card formats.
    - Configured for English text detection with DejaVuSans font for visualization.
-   - Explored KerasOCR and Tesseract for text recognition.
 
 ## Dependencies
-- Python 3.x
+- Python 3.11.0 or above.
 - TensorFlow, NumPy, Pandas, Matplotlib
 - PaddleOCR, PaddlePaddle
 - Fonts (e.g., DejaVuSans)
 
 ## Instructions
 - Run scripts in Google Colab to avoid dependency issues.
-- Upload datasets (`IDCardMultiClass.zip`, `HKPFItems.v2i.folder.zip`) to `/content/drive/MyDrive/`.
+- Upload datasets (`IDCardMultiClass.zip`, `HKPFItems.v2i.folder.zip`) or any other compatible datasets.
 - Install libraries: `pip install paddleocr paddlepaddle tensorflow`.
 - Install fonts: `apt-get install -y fonts-dejavu`.
 - Organize datasets in `/content/train`, `/content/valid`, and `/content/test` directories.
@@ -36,5 +36,3 @@ This repository contains Python scripts for classifying ID card images and extra
 - Models use callbacks to optimize performance and prevent overfitting.
 - PaddleOCR is set to `lang='en'` for English text detection.
 - Ensure datasets are preprocessed and correctly pathed before execution.
-
-Explore the scripts for insights into ID card classification and text extraction!
